@@ -275,6 +275,83 @@ func TestTrimmer(t *testing.T) {
 	}
 }
 
+func TestPrintBintangKananAtas(t *testing.T) {
+	counter := 10
+
+	for i := counter; i >= 0; i-- {
+		for x := 0; x < i; x++ {
+			fmt.Print("  ")
+		}
+
+		for y := counter; y >= i; y-- {
+			fmt.Print("*")
+		}
+		fmt.Println(" ")
+	}
+}
+
+func TestBintangKananBawah(t *testing.T) {
+	counter := 10
+
+	for x := counter; x >= 0; x-- {
+		for y := counter; y > x; y-- {
+			fmt.Print("  ")
+		}
+
+		for z := 0; z <= counter; z++ {
+			fmt.Print("*")
+		}
+
+		fmt.Println(" ")
+	}
+}
+
+func TestBintangKecilBanyak(t *testing.T) {
+	counter := 10
+
+	for j := counter; j >= 0; j-- {
+		for k := 0; k < j; k++ {
+			fmt.Print(" ")
+		}
+
+		for l := counter; l >= j; l-- {
+			fmt.Print("*")
+		}
+
+		fmt.Println(" ")
+	}
+
+	for x := counter - 1; x >= 0; x-- {
+		for y := counter; y > x; y-- {
+			fmt.Print(" ")
+		}
+
+		for z := 0; z <= x; z++ {
+			fmt.Print("*")
+		}
+
+		fmt.Println(" ")
+	}
+}
+
+func TestBintangBanyakKecil(t *testing.T) {
+	counter := 10
+
+	for i := counter; i >= 0; i-- {
+		for j := 0; j <= i; j++ {
+			fmt.Print("*")
+		}
+		fmt.Println("")
+	}
+
+	for x := counter - 1; x > 0; x-- {
+		for y := counter; y >= x; y-- {
+			fmt.Print("*")
+		}
+		fmt.Println("")
+	}
+}
+
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Repeat("a", 5)
